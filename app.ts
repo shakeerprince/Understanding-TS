@@ -1,5 +1,5 @@
 
-function add(num1 :  number, num2: number, showResult : boolean,  phrase: string  ){
+function adding(num1 :  number, num2: number, showResult : boolean,  phrase: string  ){
     // if(typeof num1 !== "number" && typeof num2 !== "number") {
     //     throw new Error('Incorrect input')
     //}
@@ -18,7 +18,7 @@ let printResult = true
 const resultPhrase = 'Result is '
 
 
-add(num1, num2, printResult, resultPhrase)
+adding(num1, num2, printResult, resultPhrase)
 
 
 const Person :{
