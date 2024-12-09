@@ -43,3 +43,9 @@ favoriteActivity = ["string"]
 console.log(favoriteActivity);
 
 
+const a : number | string | boolean =  true
+
+console.log(a);
+
+console.log(typeof(a));
+

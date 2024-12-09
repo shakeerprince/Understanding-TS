@@ -26,3 +26,6 @@ console.log(Person.name);
 var favoriteActivity;
 favoriteActivity = ["string"];
 console.log(favoriteActivity);
+var a = true;
+console.log(a);
+console.log(typeof (a));
