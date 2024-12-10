@@ -50,3 +50,11 @@ console.log(a);
 console.log(typeof(a));
 
 type Combinable = number;
+
+//never type
+
+function generateError(message: string, code: number): never{
+    throw {message: message, errorCode: code}
+}
+
+generateError("an Error occurred", 500);
