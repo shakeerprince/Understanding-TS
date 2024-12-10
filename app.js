@@ -33,4 +33,5 @@ console.log(typeof (a));
 function generateError(message, code) {
     throw { message: message, errorCode: code };
 }
-generateError("an Error occurred", 500);
+var result = generateError("an Error occurred", 500);
+console.log(result);
