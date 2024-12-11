@@ -1,3 +1,4 @@
+/*
 
 function adding(num1 :  number, num2: number, showResult : boolean,  phrase: string  ){
     // if(typeof num1 !== "number" && typeof num2 !== "number") {
@@ -60,4 +61,19 @@ function generateError(message: string, code: number): never{
 const result = generateError("an Error occurred", 500);
 
 console.log(result);
+
+
+const addNum = (a: number, b: number) =>{
+    return a + b ;
+}
+
+console.log(addNum(1,2));
+*/
+
+const hobbies = ['sports', 'cooking']
+const addHobbies = ['hiking']
+
+addHobbies.push(...hobbies);
+
+console.log(addHobbies);
 

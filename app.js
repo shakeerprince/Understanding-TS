@@ -1,38 +1,75 @@
-"use strict";
-function adding(num1, num2, showResult, phrase) {
+/*
+
+function adding(num1 :  number, num2: number, showResult : boolean,  phrase: string  ){
     // if(typeof num1 !== "number" && typeof num2 !== "number") {
     //     throw new Error('Incorrect input')
     //}
-    const result = num1 + num2;
-    if (showResult) {
-        console.log(phrase + result);
-    }
-    else {
+    const result = num1 + num2
+    if(showResult){
+        console.log(phrase + result)
+    }else{
         return result;
     }
     return num1 + num2;
 }
-let num1 = 7;
-let num2 = 34;
-let printResult = true;
-const resultPhrase = 'Result is ';
-adding(num1, num2, printResult, resultPhrase);
-const Person = {
-    name: "shaker",
-    age: 30,
+
+let num1 = 7
+let num2 = 34
+let printResult = true
+const resultPhrase = 'Result is '
+
+
+adding(num1, num2, printResult, resultPhrase)
+
+
+const Person :{
+    name : string;
+    age : number;
+    hobbies: string[];
+    role: [number, string];
+
+}
+ = {
+    name : "shaker",
+    age : 30,
     hobbies: ['sports', 'Cooking'],
     role: [1, 'author']
-};
-console.log(Person.name);
-let favoriteActivity;
-favoriteActivity = ["string"];
-console.log(favoriteActivity);
-const a = true;
-console.log(a);
-console.log(typeof (a));
-//never type
-function generateError(message, code) {
-    throw { message: message, errorCode: code };
+
 }
+
+console.log(Person.name);
+
+let favoriteActivity : string[];
+favoriteActivity = ["string"]
+console.log(favoriteActivity);
+
+
+const a : number | string | boolean =  true
+
+console.log(a);
+
+console.log(typeof(a));
+
+type Combinable = number;
+
+//never type
+
+function generateError(message: string, code: number): never{
+    throw {message: message, errorCode: code}
+}
+
 const result = generateError("an Error occurred", 500);
+
 console.log(result);
+
+
+const addNum = (a: number, b: number) =>{
+    return a + b ;
+}
+
+console.log(addNum(1,2));
+*/
+var hobbies = ['sports', 'cooking'];
+var addHobbies = ['hiking'];
+addHobbies.push.apply(addHobbies, hobbies);
+console.log(addHobbies);
