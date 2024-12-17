@@ -68,7 +68,7 @@ const addNum = (a: number, b: number) =>{
 }
 
 console.log(addNum(1,2));
-*/
+
 
 const hobbies = ['sports', 'cooking']
 const addHobbies = ['hiking']
@@ -78,3 +78,33 @@ addHobbies.push(...hobbies);
 console.log(addHobbies);
 
 
+
+enum Weather{
+    sunny = "sun",
+    rainy = "rain",
+    windy = "wind",
+    monsoon = "fall",
+}
+
+const currentWeather = Weather
+console.log(currentWeather);
+
+*/
+
+class  Person {
+  public  name : string;
+  private  age : number;
+    constructor(name : string, age : number){
+        this.name  = name;
+        this.age = age;
+    }
+
+    getName(){
+        return `${this.name} ${this.age}`;
+    }
+}
+
+
+const person = new Person("john", 20)
+console.log(person);
+console.log(person.getName());

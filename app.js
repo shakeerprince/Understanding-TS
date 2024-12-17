@@ -68,8 +68,38 @@ const addNum = (a: number, b: number) =>{
 }
 
 console.log(addNum(1,2));
-*/
-var hobbies = ['sports', 'cooking'];
-var addHobbies = ['hiking'];
-addHobbies.push.apply(addHobbies, hobbies);
+
+
+const hobbies = ['sports', 'cooking']
+const addHobbies = ['hiking']
+
+addHobbies.push(...hobbies);
+
 console.log(addHobbies);
+
+
+
+enum Weather{
+    sunny = "sun",
+    rainy = "rain",
+    windy = "wind",
+    monsoon = "fall",
+}
+
+const currentWeather = Weather
+console.log(currentWeather);
+
+*/
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getName = function () {
+        return "".concat(this.name, " ").concat(this.age);
+    };
+    return Person;
+}());
+var person = new Person("john", 20);
+console.log(person);
+console.log(person.getName());
