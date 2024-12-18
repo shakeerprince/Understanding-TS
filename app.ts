@@ -147,7 +147,7 @@ const subtract: MathOperator = (a,b) => a - b
 console.log(add(2,2));
 console.log(subtract(2,2));
 
-*/
+
 
 interface Song {
     songName: string;
@@ -165,3 +165,60 @@ const song1: Song = {
 }
 
 console.log(song1.printSongInfo("Baby Baby", "justin"));
+
+
+
+interface movieDetails{
+    name: string;
+    rating: number;
+    printMovieInfo(name: string, price: number, rating: number): string | number
+}
+
+interface movieGenre extends movieDetails{
+    genre: string
+}
+
+
+const movie1: movieGenre = {
+    name: "Avengers",
+    rating : 8.0,
+    genre: "Action",
+    printMovieInfo(
+        name: string,
+        price: number,
+        rating: number
+    ): string | number {
+        return ` Movie name: ${name} Price: ${price} Rating: ${rating}`
+    }
+}
+
+const res = movie1.printMovieInfo("John Wick", 100, 8)
+console.log(res);
+
+
+*/
+// interface with implement 
+
+interface Hello {
+    greeting(): void,
+    goodbye(): void
+}
+
+class hi implements Hello {
+
+    greeting(): void {
+        console.log('Hey');
+        
+    }
+    goodbye(): void {
+        console.log('Bye Bye ');
+        
+        }
+}
+
+
+let greet = new hi();
+greet.greeting();
+greet.goodbye();
+
+ 

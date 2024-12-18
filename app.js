@@ -147,12 +147,68 @@ const subtract: MathOperator = (a,b) => a - b
 console.log(add(2,2));
 console.log(subtract(2,2));
 
-*/
-var song1 = {
+
+
+interface Song {
+    songName: string;
+    singerName: string;
+    printSongInfo (songName: string, singerName: string) : string
+}
+
+
+const song1: Song = {
     songName: "Baby",
     singerName: "justin",
-    printSongInfo: function (songName, singerName) {
-        return "Song: ".concat(songName, " Singer: ").concat(singerName);
+    printSongInfo: (songName, singerName) =>{
+        return `Song: ${songName} Singer: ${singerName}`
     }
-};
+}
+
 console.log(song1.printSongInfo("Baby Baby", "justin"));
+
+
+
+interface movieDetails{
+    name: string;
+    rating: number;
+    printMovieInfo(name: string, price: number, rating: number): string | number
+}
+
+interface movieGenre extends movieDetails{
+    genre: string
+}
+
+
+const movie1: movieGenre = {
+    name: "Avengers",
+    rating : 8.0,
+    genre: "Action",
+    printMovieInfo(
+        name: string,
+        price: number,
+        rating: number
+    ): string | number {
+        return ` Movie name: ${name} Price: ${price} Rating: ${rating}`
+    }
+}
+
+const res = movie1.printMovieInfo("John Wick", 100, 8)
+console.log(res);
+
+
+*/
+// interface with implement 
+var hi = /** @class */ (function () {
+    function hi() {
+    }
+    hi.prototype.greeting = function () {
+        console.log('Hey');
+    };
+    hi.prototype.goodbye = function () {
+        console.log('Bye Bye ');
+    };
+    return hi;
+}());
+var greet = new hi();
+greet.greeting();
+greet.goodbye();
