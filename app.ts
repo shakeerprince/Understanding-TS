@@ -117,5 +117,51 @@ const person = new Person("john", 20)
 console.log(person);
 console.log(person.getName());
 
+
+
+interface Computer{
+    name: string;
+    ram:number;
+    brand : string
+
+}
+
+const computerExample :  Computer = {
+    name : "Dell",
+    ram : 8,
+    brand : "Intel"
+}
+console.log(computerExample);
+console.log(computerExample.name);
+console.log(computerExample.ram);
+console.log(computerExample.brand);
+
+
+
+interface MathOperator {
+    (x : number, y: number): number
+}
+
+const add: MathOperator = (a, b) => a + b;
+const subtract: MathOperator = (a,b) => a - b
+console.log(add(2,2));
+console.log(subtract(2,2));
+
 */
 
+interface Song {
+    songName: string;
+    singerName: string;
+    printSongInfo (songName: string, singerName: string) : string
+}
+
+
+const song1: Song = {
+    songName: "Baby",
+    singerName: "justin",
+    printSongInfo: (songName, singerName) =>{
+        return `Song: ${songName} Singer: ${singerName}`
+    }
+}
+
+console.log(song1.printSongInfo("Baby Baby", "justin"));

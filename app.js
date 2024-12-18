@@ -89,17 +89,70 @@ enum Weather{
 const currentWeather = Weather
 console.log(currentWeather);
 
-*/
-var Person = /** @class */ (function () {
-    function Person(name, age) {
-        this.name = name;
+
+
+class  Person {
+  public  name : string;
+  private  age : number;
+  protected gender : string;
+    constructor(name : string, age : number, gender : string){
+        this.name  = name;
         this.age = age;
+        this.gender = gender;
     }
-    Person.prototype.getName = function () {
-        return "".concat(this.name, " ").concat(this.age);
-    };
-    return Person;
-}());
-var person = new Person("john", 20);
+
+    getName(){
+        return `${this.name} ${this.age}`;
+    }
+}
+
+class Human extends Person{
+    constructor(name : string, age : number, gender : string){
+       super(name, age, gender);
+    }
+}
+
+
+const person = new Person("john", 20)
 console.log(person);
 console.log(person.getName());
+
+
+
+interface Computer{
+    name: string;
+    ram:number;
+    brand : string
+
+}
+
+const computerExample :  Computer = {
+    name : "Dell",
+    ram : 8,
+    brand : "Intel"
+}
+console.log(computerExample);
+console.log(computerExample.name);
+console.log(computerExample.ram);
+console.log(computerExample.brand);
+
+
+
+interface MathOperator {
+    (x : number, y: number): number
+}
+
+const add: MathOperator = (a, b) => a + b;
+const subtract: MathOperator = (a,b) => a - b
+console.log(add(2,2));
+console.log(subtract(2,2));
+
+*/
+var song1 = {
+    songName: "Baby",
+    singerName: "justin",
+    printSongInfo: function (songName, singerName) {
+        return "Song: ".concat(songName, " Singer: ").concat(singerName);
+    }
+};
+console.log(song1.printSongInfo("Baby Baby", "justin"));
