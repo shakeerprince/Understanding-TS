@@ -89,14 +89,16 @@ enum Weather{
 const currentWeather = Weather
 console.log(currentWeather);
 
-*/
+
 
 class  Person {
   public  name : string;
   private  age : number;
-    constructor(name : string, age : number){
+  protected gender : string;
+    constructor(name : string, age : number, gender : string){
         this.name  = name;
         this.age = age;
+        this.gender = gender;
     }
 
     getName(){
@@ -104,7 +106,16 @@ class  Person {
     }
 }
 
+class Human extends Person{
+    constructor(name : string, age : number, gender : string){
+       super(name, age, gender);
+    }
+}
+
 
 const person = new Person("john", 20)
 console.log(person);
 console.log(person.getName());
+
+*/
+
