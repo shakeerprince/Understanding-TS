@@ -1,3 +1,4 @@
+"use strict";
 /*
 
 function adding(num1 :  number, num2: number, showResult : boolean,  phrase: string  ){
