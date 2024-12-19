@@ -196,7 +196,7 @@ const res = movie1.printMovieInfo("John Wick", 100, 8)
 console.log(res);
 
 
-*/
+
 // interface with implement 
 
 interface Hello {
@@ -221,4 +221,27 @@ let greet = new hi();
 greet.greeting();
 greet.goodbye();
 
- 
+
+
+//Generics
+
+// function printNumber(item: number, defaultValue: number):[number, number] {
+//     return [ item, defaultValue]
+// }
+
+// const num = printNumber(1,2)
+// console.log(num);
+
+function uniqueDataTypesFunc<Type>(
+  item: Type,
+  defaultValue: Type
+): [Type, Type] {
+  return [item, defaultValue];
+}
+
+const result = uniqueDataTypesFunc<number>(10,20)
+
+console.log(result);
+
+ */
+

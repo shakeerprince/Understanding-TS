@@ -196,19 +196,40 @@ const res = movie1.printMovieInfo("John Wick", 100, 8)
 console.log(res);
 
 
-*/
-// interface with implement 
-var hi = /** @class */ (function () {
-    function hi() {
-    }
-    hi.prototype.greeting = function () {
+
+// interface with implement
+
+interface Hello {
+    greeting(): void,
+    goodbye(): void
+}
+
+class hi implements Hello {
+
+    greeting(): void {
         console.log('Hey');
-    };
-    hi.prototype.goodbye = function () {
+        
+    }
+    goodbye(): void {
         console.log('Bye Bye ');
-    };
-    return hi;
-}());
-var greet = new hi();
+        
+        }
+}
+
+
+let greet = new hi();
 greet.greeting();
 greet.goodbye();
+
+ */
+//Generics
+// function printNumber(item: number, defaultValue: number):[number, number] {
+//     return [ item, defaultValue]
+// }
+// const num = printNumber(1,2)
+// console.log(num);
+function uniqueDataTypesFunc(item, defaultValue) {
+    return [item, defaultValue];
+}
+var result = uniqueDataTypesFunc(10, 20);
+console.log(result);
