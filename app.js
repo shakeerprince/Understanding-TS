@@ -261,18 +261,34 @@ const shortWords = filterArray<string>(stringArr , (word)=> word.length > 5);
 
 console.log(shortWords);
 
- */
-var Box = /** @class */ (function () {
-    function Box(initialContent) {
-        this.content = initialContent;
+ 
+
+class Box<T> {
+    private content : T;
+    constructor(initialContent: T){
+        this.content = initialContent
     }
-    Box.prototype.getContent = function () {
-        return this.content;
-    };
-    Box.prototype.setContent = function (newContent) {
-        this.content = newContent;
-    };
-    return Box;
-}());
-var stringBox = new Box("Hello, TypeScript");
+
+    getContent(){
+       return this.content
+    }
+
+    setContent(newContent: T): void {
+        this.content = newContent
+    }
+}
+
+
+const stringBox = new Box<string>("Hello, TypeScript" )
 console.log(stringBox.getContent());
+*/
+function exampleFunction(value) {
+    if (typeof value === 'string') {
+        console.log(value.toUpperCase());
+    }
+    else {
+        console.log(value.toFixed(2));
+    }
+}
+exampleFunction('hello');
+exampleFunction(20);

@@ -261,7 +261,7 @@ const shortWords = filterArray<string>(stringArr , (word)=> word.length > 5);
 
 console.log(shortWords);
 
- */
+ 
 
 class Box<T> {
     private content : T;
@@ -281,3 +281,19 @@ class Box<T> {
 
 const stringBox = new Box<string>("Hello, TypeScript" )
 console.log(stringBox.getContent());
+*/
+
+type MyType = string | number
+
+function exampleFunction(value: MyType){
+    if(typeof value === 'string' ){
+        console.log(value.toUpperCase());
+        
+    }else{
+        console.log(value.toFixed(2));
+        
+    }
+}
+
+exampleFunction('hello')
+exampleFunction(20)
