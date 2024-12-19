@@ -221,15 +221,58 @@ let greet = new hi();
 greet.greeting();
 greet.goodbye();
 
- */
+
+
 //Generics
+
 // function printNumber(item: number, defaultValue: number):[number, number] {
 //     return [ item, defaultValue]
 // }
+
 // const num = printNumber(1,2)
 // console.log(num);
-function uniqueDataTypesFunc(item, defaultValue) {
-    return [item, defaultValue];
+
+function uniqueDataTypesFunc<Type>(
+  item: Type,
+  defaultValue: Type
+): [Type, Type] {
+  return [item, defaultValue];
 }
-var result = uniqueDataTypesFunc(10, 20);
+
+const result = uniqueDataTypesFunc<number>(10,20)
+
 console.log(result);
+
+
+
+
+function filterArray<T>(array: T[], condition: (item: T)=> boolean): T[]{
+    return array.filter((item) => condition(item));
+}
+
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+const evenNumbers = filterArray<number>(numberArray , (num) => num % 2 == 0)
+console.log(evenNumbers);
+
+
+const stringArr = ['apple', 'orange', 'water melon','kivi']
+
+const shortWords = filterArray<string>(stringArr , (word)=> word.length > 5);
+
+console.log(shortWords);
+
+ */
+var Box = /** @class */ (function () {
+    function Box(initialContent) {
+        this.content = initialContent;
+    }
+    Box.prototype.getContent = function () {
+        return this.content;
+    };
+    Box.prototype.setContent = function (newContent) {
+        this.content = newContent;
+    };
+    return Box;
+}());
+var stringBox = new Box("Hello, TypeScript");
+console.log(stringBox.getContent());

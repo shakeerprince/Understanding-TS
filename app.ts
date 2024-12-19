@@ -243,5 +243,41 @@ const result = uniqueDataTypesFunc<number>(10,20)
 
 console.log(result);
 
+
+
+
+function filterArray<T>(array: T[], condition: (item: T)=> boolean): T[]{
+    return array.filter((item) => condition(item));
+}
+
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+const evenNumbers = filterArray<number>(numberArray , (num) => num % 2 == 0)
+console.log(evenNumbers);
+
+
+const stringArr = ['apple', 'orange', 'water melon','kivi']
+
+const shortWords = filterArray<string>(stringArr , (word)=> word.length > 5);
+
+console.log(shortWords);
+
  */
 
+class Box<T> {
+    private content : T;
+    constructor(initialContent: T){
+        this.content = initialContent
+    }
+
+    getContent(){
+       return this.content
+    }
+
+    setContent(newContent: T): void {
+        this.content = newContent
+    }
+}
+
+
+const stringBox = new Box<string>("Hello, TypeScript" )
+console.log(stringBox.getContent());
